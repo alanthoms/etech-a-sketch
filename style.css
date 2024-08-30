@@ -1,6 +1,7 @@
 .container{
     display:flex;
-    size: 1000px
+    flex-direction: column;
+    width: 1000px
 
 }
 
@@ -16,3 +17,16 @@
     background-color:aquamarine;
     transition: 0.4s;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  
+  @media screen and (min-width: 800px) {
+    .square {
+      flex: 1;
+    }
+  }
