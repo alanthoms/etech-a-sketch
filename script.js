@@ -1,6 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+function createGrid(s){
     const container = document.querySelector(".container");
-    let s = 16;
+    // Clear the existing grid before creating a new one
+    container.innerHTML = '';
     for (let i = 0; i < s ;i++) { // 16x16 = 256
         const rowDiv = document.createElement("div");
         rowDiv.classList.add("row");
@@ -16,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
             rowDiv.appendChild(sqDiv);
         }
     }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    createGrid(10);
 });
 
 
@@ -34,14 +39,15 @@ function showPopup() {
 
 function showPopup(){
 
-    const userInput = prompt("Enter size of grid 1-10");
+    const userInput = prompt("Enter size of grid 1-100");
     const userNumber = Number(userInput);
 
     // Convert the input to a number and check if it's valid
 
-    if (!isNaN(userNumber)&& userNumber<=10) {
+    if (!isNaN(userNumber)&& userNumber<=100) {
         // User entered a valid number
         alert("You entered the number: " + userNumber);
+        createGrid(userNumber);
     } else {
         // User did not enter a valid number
         alert("That's not a valid number.");
