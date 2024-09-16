@@ -1,4 +1,7 @@
 function createGrid(s){
+    //create square size
+    const squareSize = 800 / s;
+    
     const container = document.querySelector(".container");
     // Clear the existing grid before creating a new one
     container.innerHTML = '';
@@ -10,6 +13,9 @@ function createGrid(s){
             const sqDiv = document.createElement("div");
             sqDiv.classList.add("square");
 
+            //make square size responsive
+            sqDiv.style.width = `${squareSize}px`;
+            sqDiv.style.height = `${squareSize}px`;
             //add event listener to squarediv of mouseenter so that the style background color of the div 
             sqDiv.addEventListener("mouseenter", () => {
                 sqDiv.style.backgroundColor = "red"; // Change the color when hovered
