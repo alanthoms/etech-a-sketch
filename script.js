@@ -32,3 +32,20 @@ function showPopup() {
     }
 }
 
+function showPopup(){
+
+    const userInput = prompt("Enter size of grid 1-10");
+    const userNumber = Number(userInput);
+
+    // Convert the input to a number and check if it's valid
+
+    if (!isNaN(userNumber)&& userNumber<=10) {
+        // User entered a valid number
+        alert("You entered the number: " + userNumber);
+    } else {
+        // User did not enter a valid number
+        alert("That's not a valid number.");
+    }
+}
+
+
