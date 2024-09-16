@@ -1,3 +1,12 @@
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+
 function createGrid(s){
     //create square size
     const squareSize = 800 / s;
@@ -16,9 +25,21 @@ function createGrid(s){
             //make square size responsive
             sqDiv.style.width = `${squareSize}px`;
             sqDiv.style.height = `${squareSize}px`;
+
+
+            //set square opacity to 1
+            sqDiv.style.opacity = 1;
+
+
+
             //add event listener to squarediv of mouseenter so that the style background color of the div 
             sqDiv.addEventListener("mouseenter", () => {
-                sqDiv.style.backgroundColor = "red"; // Change the color when hovered
+
+                let currentOpacity = parseFloat(sqDiv.style.opacity);
+                sqDiv.style.backgroundColor = getRandomColor(); // Change the color when hovered
+
+                sqDiv.style.opacity = (currentOpacity - 0.1)
+
             });
             rowDiv.appendChild(sqDiv);
         }
