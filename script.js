@@ -19,3 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+function showPopup() {
+    // Display a confirmation popup with a question
+    const userConfirmed = confirm("Do you want to proceed?");
+
+    if (userConfirmed) {
+        // User pressed "OK"
+        alert("You chose to proceed!");
+    } else {
+        // User pressed "Cancel"
+        alert("You chose to cancel.");
+    }
+}
+
